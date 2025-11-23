@@ -54,7 +54,7 @@ int find_p(int x) {
     }
 
     if (tmp_N > 1) {
-        exponents.push_back(tmp_N);
+        exponents.push_back(1);
     }
 
     if (exponents.empty()) {
