@@ -1,7 +1,7 @@
 CXX = g++
 FLAGS = -std=c++17 -Wall -Wextra
 TARGET = out
-SRC = 3_a.cpp
+SRC = 1a.cpp
 
 $(TARGET): $(src)
 	$(CXX) $(FLAGS) $(SRC) -o $(TARGET)

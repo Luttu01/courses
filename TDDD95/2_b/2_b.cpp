@@ -8,11 +8,10 @@ int get_valid_int(int upper_bound);
 
 int main() {
     int length = get_valid_int(100000);
-    std::vector<int> array(length), positions(length+1), duplicates;
+    std::vector<int> array(length), duplicates;
     for (int i=0; i < length; i++) {
         int x = get_valid_int(length, duplicates);
         array[i] = x;
-        positions[x] = i;
     }
     std::cout << "\n";
     int left_bound = 0;
@@ -50,7 +49,6 @@ int main() {
         }   
         std::cout << swaps << "\n";
     }
-
     return 0;
 }
 

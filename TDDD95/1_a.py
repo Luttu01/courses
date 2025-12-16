@@ -26,15 +26,13 @@ class Solver():
                     continue
                 if pattern_one[i].startswith("<"):
                     if pattern_one[i] in placeholders["pattern_one"]:
-                        if placeholders["pattern_one"][pattern_one[i]] != pattern_one[i]:
-                            print(f"kill solution {n}")
+                        if placeholders["pattern_one"][pattern_one[i]] != pattern_two[i]:
                             self._kill_solution()
                             break
                     placeholders["pattern_one"][pattern_one[i]] = pattern_two[i]
                 elif pattern_two[i].startswith("<"):
                     if pattern_two[i] in placeholders["pattern_two"]:
-                        if placeholders["pattern_two"][pattern_two[i]] != pattern_two[i]:
-                            print(f"kill solution {n}")
+                        if placeholders["pattern_two"][pattern_two[i]] != pattern_one[i]:
                             self._kill_solution()
                             break
                     placeholders["pattern_two"][pattern_two[i]] = pattern_one[i]
