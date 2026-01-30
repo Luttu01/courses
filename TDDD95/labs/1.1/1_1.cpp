@@ -47,10 +47,11 @@ void solve() {
             intervals[i].id = i;
         }
 
-        // Sort the intervals by A (start point), 
+        // Sort the intervals by A (start point), O (N log(N))
         std::sort(intervals.begin(), intervals.end(), intervalComparator);
 
-        // Solve using a greedy approach
+        // Solve using a greedy approach, O(N)
+        // idx is never reset, we iterate through intervals only once
         std::vector<int> indices;
         double current = A;
         uint idx = 0;
@@ -67,7 +68,7 @@ void solve() {
                 idx++;
             }
 
-            // either we found nothing or it doesnt cover our current target
+            // either we found nothing or it doesnt cover our current target so we stop
             if (best_id == -1 || (max_cover <= current && current != B)) {
                 possible = false;
                 break;

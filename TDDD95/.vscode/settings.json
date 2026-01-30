@@ -60,5 +60,6 @@
         "fstream": "cpp",
         "sstream": "cpp",
         "list": "cpp"
-    }
+    },
+    "C_Cpp.default.compilerPath": ""
 }

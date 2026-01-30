@@ -1,3 +1,10 @@
+/*
+Author: Erik Luttu (erilu272)
+Problem: 0/1 Knapsack problem
+Algorithm: Dynamic programming
+Time complexity: O(N * C), as we run two for loops of N and C
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -11,6 +18,8 @@ void solve(std::vector<int>& values, std::vector<int>& weights, int C, int n) {
         // Iterate through each possible capacity
         for (int j = 1; j <= C; j++) {
             if (weights[i - 1] <= j) {
+                // Compare current accumulated value to 
+                // (new_item_value + best value at current_capacity - new_item_weight)
                 dp[i][j] = std::max(dp[i - 1][j], 
                                     dp[i - 1][j - weights[i - 1]] + values[i - 1]);
             } else {
@@ -18,7 +27,9 @@ void solve(std::vector<int>& values, std::vector<int>& weights, int C, int n) {
             }
         }
     }
-    // Backtrack to find chosen objects/indices
+    // Backtrack to find chosen objects/indices.
+    // Check if value of item above in matrix differs, 
+    // if it does it means we've included it and we add it to indices
     std::vector<int> indices;
     int cap = C;
     for (int i = n; i > 0; i--) {
