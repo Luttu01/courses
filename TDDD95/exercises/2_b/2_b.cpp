@@ -1,7 +1,5 @@
 #include <iostream>
-#include <limits>
 #include <vector>
-#include <algorithm>
 
 class FenwickTree {
     int size;
