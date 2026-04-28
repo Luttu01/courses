@@ -5,7 +5,7 @@ Algorithm: Fenwick tree data structure
 Time complexity: O(Q * log(N))
 */
 
-#include <cstdlib>
+#include <cstdlib> 
 #include <ios>
 #include <iostream>
 #include <vector>

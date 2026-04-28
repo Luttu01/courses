@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+
+void solve(void) {
+    unsigned k, m, res;
+    std::cin >> k >> m;
+    std::string str = std::to_string(m);
+    while(!str.empty()) {
+        for(std::size_t i = 0; i < str.size(); ++i) {
+            res += (int)str[i] * (int)str[i];
+        }
+    }
+    std::cout << res << "\n";
+}
+
+int main() {
+    unsigned p;
+    std::cin >> p;
+    while(p-- > 0) {
+        solve();
+    }
+    return 0;
+}
